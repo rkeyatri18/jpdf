@@ -1,0 +1,18 @@
+   
+   .left{
+    width: 30%;
+    float: left;
+  }
+  .right{  
+   width:70%;
+   float: right;
+ }
+ .wrap{
+   z-index: 9999;
+ }
+ .modal-content{
+   background-color: #fff !important;
+ }
+ .pagin-wrap p{
+   color: #000;
+ }

@@ -1,0 +1,5 @@
+pricing like(novo)
+stripe integrate in back(nodejs)
+user info(valid,passRest,)
+chatOption
+pricing(detail from novo)

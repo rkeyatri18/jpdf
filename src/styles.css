@@ -1,0 +1,1850 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~ngx-toastr/toastr';
+@import 'assets/css/app.min.css';
+@import 'assets/css/bootstrap.min.css';
+@import 'assets/css/icons.min.css';
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+html,
+body {
+    height: 100%;
+}
+/* body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
+mat-form-field {
+    width: 100%;
+}
+
+.blog-wrap{ 
+  padding: 7px 10px 20px 10px;
+  min-height: 120px;
+  border: 1px solid rgb(0 51 152 / 16%);
+  border-radius: 5px;
+  box-shadow: 0px 4px 12px #cccccc26;
+  margin-bottom: 9px;
+}
+
+.center {
+    margin: 0;
+    position: fixed;
+    position: -webkit-sticky;
+    background: blue;
+    top: 40px;
+    left: 52%;
+    transform: translate(-50%, -50%);
+    display: none;
+    z-index: 99999;
+    font-size: 28px;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+}
+
+.modal.fade .modal-dialog {
+    transition: transform 0.3s ease-out;
+    transform: translate(0, -50px);
+    width: 70% !important;
+    top: 30px;
+}
+.modal.fade .modal-dialog.modal-lg {
+    transition: transform 0.3s ease-out;
+    transform: translate(0, -50px);
+    width: 95% !important;
+    max-width: 95% !important;
+    top: 30px;
+}
+.btn-modal {
+    color: #0d24ff;
+    background-color: #ffffff;
+    border-color: #0d24ff;
+}
+
+.modal-dialog input[type="file"] {
+    cursor: pointer !important;
+    border: 1px dashed !important;
+    height: 200px !important;
+    margin: auto !important;
+    background: transparent !important;
+    display: block !important;
+    opacity: 0;
+    align-items: center !important;
+    line-height: 200px !important;
+    text-align: center !important;
+}
+.preview-box .changeImg input[type="file"] {
+    cursor: pointer !important;
+    border: 1px dashed !important;
+    height: 50px !important;
+    margin: auto !important;
+    background: transparent !important;
+    display: block !important;
+    opacity: 0;
+    width: 100%;
+    overflow: hidden;
+    align-items: center !important;
+    line-height: 50px !important;
+    text-align: center !important;
+}
+.preview-box .changeImg label span {
+    top: 187px;
+    left: 17px;
+    z-index: 9999;
+    background: #bfc2e300;
+    width: 99%;
+    font-size: 15px;
+    color: #fff;
+    position: absolute;
+    opacity: 1;
+    text-align: center;
+    border: 1px solid #fff;
+    line-height: 34px;
+    cursor: pointer;
+}
+.modal-dialog .modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    line-height: 15px;
+    border-bottom: 1px solid #dee2e600;
+    border-top-left-radius: calc(0.3rem - 1px);
+    border-top-right-radius: calc(0.3rem - 1px);
+}
+.modal-dialog button.close {
+    background: transparent !important;
+    color: rgb(255, 255, 255) !important;
+    font-size: 18px !important;
+}
+.modal-dialog label {
+    top: 18px;
+    left: 17px;
+    z-index: 0;
+    background: #bfc2e359;
+    width: 99%;
+    height: 286px;
+    opacity: 1;
+    border: 1px dashed #ccc;
+    text-align: center;
+    line-height: 279px;
+    cursor: pointer;
+}
+.changeImg label {
+  font-size: 14px;
+  top: 9px;
+  right: 0px;
+  position: relative;
+  z-index: 0;
+  background: #ff9800;
+  width: 122px;
+  font-weight: 300;
+  height: 35px;
+  opacity: 1;
+  border: 1px dashed #ccc0;
+  text-align: center;
+  line-height: 32px;
+  border-radius: 5px;
+}
+.modal-dialog  .custom-control.custom-radio label {
+  top: -21px;
+  position: relative;
+  left: 5px;
+  float: left;
+  display: block;
+  font-size: 12px;
+  padding-top: 0px;
+  line-height: 14px;
+  padding-left: 15px;
+  /* z-index: 0; */
+  background: #c1060600;
+  width: 100%;
+  height: 11px;
+  /* opacity: 1; */
+  text-align: left;
+  border: none;
+  /* text-align: center; */
+  /* line-height: 279px; */
+  /* cursor: pointer; */
+  color: #000;
+}
+.alignB {
+    margin-bottom:4px;
+    margin-top:16px;
+}
+.modal-dialog .mbBody {
+  min-height: 242px;
+  max-height: 248px;
+}
+input#file-upload-button {
+    background-color: #fff !important;
+}
+.error {
+    font-size: 10px;
+    color: red;
+}
+.alignB p {
+  font-size: 14px;
+  height: 14px;
+  line-height: 22px;
+}
+.upload {
+    line-height: 14px;
+    color: #3f51b5;
+    font-size: 15px;
+}
+.upload-img {
+    height: 45px;
+    width: 45px;
+    border: 1px solid;
+    margin-top: 17px;
+    border: white;
+    box-shadow: 0 2px 7px #edededd1;
+    border-radius: 5px;
+}
+.modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid #dee2e600;
+    border-top-left-radius: calc(0.3rem - 1px);
+    border-top-right-radius: calc(0.3rem - 1px);
+}
+.modal-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0.75rem;
+    border-top: 1px solid #dee2e600;
+    border-bottom-right-radius: calc(0.3rem - 1px);
+    border-bottom-left-radius: calc(0.3rem - 1px);
+}
+.modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgb(0 0 0 / 0%);
+    border-radius: 0.3rem;
+    outline: 0;
+}
+.crop-box {
+
+    width: 250px;
+    height: 190px;
+    overflow: hidden;
+
+}
+.preview-box {
+    width: 150px;
+    height: 144px;
+    overflow: hidden;
+}
+
+/* New template css start*/
+
+@page {
+  size: 210mm 297mm;
+padding: 100px;
+
+}
+.page {
+  page-break-after: always;
+padding: 100px;
+}
+  
+   
+.pusher1,
+.pusher2,.pusher3,.pusher4,.pusher5,.pusher6,.pusher7,.pusher8,
+.pusher9, .pusher10, .pusher11, .pusher12, .pusher13,.pusher14,.pusher15, .pusher16,
+.pusher17 {
+ 
+background: rgb(255, 255, 255);
+  display: block;
+  /* margin: 0 auto;  */
+    padding: 0px 24px 20px;
+  /* padding: 10px 5px 3px 26px; */
+  margin-bottom: 4px;
+  box-shadow: 0 0 0.5px rgb(0 0 0 / 50%);
+  height: auto;  
+  box-sizing: border-box; 
+  font-size: 12px;
+  line-height: 20px;
+  min-height: 845px;
+ /* word-break: break-word !important;
+overflow: hidden !important;
+word-wrap: break-word !important;
+word-break: break-word !important;
+page-break-inside: avoid !important;
+page-break-before: always !important;  
+break-inside: avoid;  */
+}
+/* .pusher1 .resumeLeft .leftWrap */
+
+.pusher1 ul ul li,.pusher1 ol ul li,
+.pusher2 ul ul li,.pusher2 ol ul li,
+.pusher3 ul ul li,.pusher3 ol ul li,
+.pusher4 ul ul li,.pusher4 ol ul li,
+.pusher5 ul ul li,.pusher5 ol ul li,
+.pusher6 ul ul li,.pusher6 ol ul li,
+.pusher7 ul ul li,.pusher7 ol ul li,
+.pusher8 ul ul li,.pusher8 ol ul li,
+.pusher9 ul ul li,.pusher9 ol ul li,
+.pusher11 ul ul li,.pusher11 ol ul li,
+.pusher12 ul ul li,.pusher12 ol ul li,
+.pusher13 ul ul li,.pusher13 ol ul li, 
+.pusher10 ul ul li,.pusher10 ol ul li, 
+.pusher14 ul ul li,.pusher14 ol ul li,
+.pusher15 ul ul li,.pusher15 ol ul li,
+.pusher16 ul ul li,.pusher16 ol ul li,
+.pusher17 ul ul li,.pusher17 ol ul li {   
+margin-bottom: 5px;
+text-align: justify;
+}
+.pusher1 ul ul li p,.pusher1 ol ul li p,
+.pusher2 ul ul li p,.pusher2 ol ul li p,
+.pusher3 ul ul li p,.pusher3 ol ul li p,
+.pusher4 ul ul li p,.pusher4 ol ul li p,
+.pusher5 ul ul li p,.pusher5 ol ul li p,
+.pusher6 ul ul li p,.pusher6 ol ul li p,
+.pusher7 ul ul li p,.pusher7 ol ul li p,
+.pusher8 ul ul li p,.pusher8 ol ul li p,
+.pusher9 ul ul li p,.pusher9 ol ul li p,
+.pusher13 ul ul li p,.pusher13 ol ul li p, 
+.pusher10 ul ul li p,.pusher10 ol ul li p, 
+.pusher11 ul ul li p,.pusher11 ol ul li p,
+.pusher12 ul ul li p,.pusher12 ol ul li p,
+.pusher14 ul ul li p,.pusher14 ol ul li p,
+.pusher15 ul ul li p,.pusher15 ol ul li p,
+.pusher16 ul ul li p,.pusher16 ol ul li p,
+.pusher17 ul ul li p,.pusher17 ol ul li p{   
+margin-bottom: 0px; 
+}
+
+
+.pusher1 p,.pusher1 span,  .pusher1 p ul li,.pusher1 p ul li div,.pusher1 p ol li div,
+.pusher3 p, .pusher3 span, .pusher3 p ul li,.pusher3 p ul li div,.pusher3 p ol li div,
+.pusher4 p, .pusher4 span, .pusher4 p ul li,.pusher4 p ul li div,.pusher4 p ol li div,
+.pusher2 p, .pusher2 span, .pusher2 p ul li,.pusher2 p ul li div,.pusher2 p ol li div,
+.pusher5 p, .pusher5 span, .pusher5 p ul li,.pusher5 p ul li div,.pusher5 p ol li div,
+.pusher6 p, .pusher6 span, .pusher6 p ul li,.pusher6 p ul li div,.pusher6 p ol li div,
+.pusher7 p, .pusher7 span, .pusher7 p ul li,.pusher7 p ul li div,.pusher7 p ol li div,
+.pusher8 p, .pusher8 span, .pusher8 p ul li,.pusher8 p ul li div,.pusher8 p ol li div,
+.pusher9 p, .pusher9 span, .pusher9 p ul li,.pusher9 p ul li div,.pusher9 p ol li div,
+.pusher11 p, .pusher11 span, .pusher11 p ul li,.pusher11 p ul li div,.pusher11 p ol li div,
+.pusher12 p, .pusher12 span  .pusher12 p ul li,.pusher12 p ul li div,.pusher12 p ol li div,
+.pusher10 p, .pusher10 span, .pusher10 p ul li,.pusher10 p ul li div,.pusher10 p ol li div, 
+.pusher13 p, .pusher13 span, .pusher13 p ul li,.pusher13 p ul li div,.pusher13 p ol li div, 
+.pusher14 p, .pusher14 span, .pusher14 p ul li,.pusher14 p ul li div,.pusher14 p ol li div,
+.pusher15 p, .pusher15 span, .pusher15 p ul li,.pusher15 p ul li div,.pusher15 p ol li div,
+.pusher16 p, .pusher16 span, .pusher16 p ul li,.pusher16 p ul li div,.pusher17 p ol li div,
+.pusher16 p ol li div, .pusher17 p ul li div,
+.pusher17 p, .pusher17 span, .pusher17 p ul li,.pusher17 p p {
+font-size: 8px;
+line-height: 16px; 
+text-align: justify;
+word-break: break-word !important;
+overflow: hidden;
+}
+
+
+.pusher1 .custom-content ul ul li p span,.pusher1 .custom-content ol ul li p span,
+.pusher2 ul ul li p span,.pusher2 ol ul li p span,
+.pusher3 ul ul li p span,.pusher3 ol ul li p span,
+.pusher4 ul ul li p span,.pusher4 ol ul li p span,
+.pusher1 ul ul li p span,.pusher1 ol ul li p span,
+.pusher5 ul ul li p span,.pusher5 ol ul li p span,
+.pusher6 ul ul li p span,.pusher6 ol ul li p span,
+.pusher7 ul ul li p span,.pusher7 ol ul li p span,
+.pusher8 ul ul li p span,.pusher8 ol ul li p span,
+.pusher9 ul ul li p span,.pusher9 ol ul li p span,
+.pusher13 ul ul li p span,.pusher13 ol ul li p span, 
+.pusher10 ul ul li p span,.pusher10 ol ul li p span, 
+.pusher11 ul ul li p span,.pusher11 ol ul li p span,
+.pusher12 ul ul li p span,.pusher12 ol ul li p span,
+.pusher14 ul ul li p span,.pusher14 ol ul li p span,
+.pusher15 ul ul li p span,.pusher15 ol ul li p span,
+.pusher16 ul ul li p span,.pusher16 ol ul li p span,
+.pusher17 ul ul li p span,.pusher17 ol ul li p span{   
+margin-bottom: 0px !important;  
+font-size: 8px; 
+line-height: 16px;
+text-align: justify;
+/* word-break: break-word !important; */
+overflow: hidden;
+margin-bottom: 0px !important;
+}
+
+.pusher1 .resumeMake .resumeLeft .skill-line p span:nth-child(1),
+.pusher2 .resumeMake .resumeLeft .skill-line p span:nth-child(1),
+.pusher3 .resumeMake .resumeLeft .skill-line p span:nth-child(1),
+.pusher4 .resumeMake .resumeLeft .skill-line p span:nth-child(1),
+.pusher5 .resumeMake .resumeLeft .skill-line p span:nth-child(1),
+.pusher6 .resumeMake .resumeLeft .skill-line p span:nth-child(1),
+.pusher7 .resumeMake .resumeLeft .skill-line p span:nth-child(1),
+.pusher8 .resumeMake .resumeLeft .skill-line p span:nth-child(1),
+.pusher9 .resumeMake .resumeLeft .skill-line p span:nth-child(1),
+.pusher10 .resumeMake .resumeLeft .skill-line p span:nth-child(1),
+.pusher11 .resumeMake .resumeLeft .skill-line p span:nth-child(1),
+.pusher12 .resumeMake .resumeLeft .skill-line p span:nth-child(1),
+.pusher13 .resumeMake .resumeLeft .skill-line p span:nth-child(1),
+.pusher14 .resumeMake .resumeLeft .skill-line p span:nth-child(1),
+.pusher15 .resumeMake .resumeLeft .skill-line p span:nth-child(1),
+.pusher16 .resumeMake .resumeLeft .skill-line p span:nth-child(1),
+.pusher17 .resumeMake .resumeLeft .skill-line p span:nth-child(1){  
+width:100%;
+display: inline-block;
+}
+
+.pusher1  .skill-line .language,
+.pusher2  .skill-line .language,
+.pusher3  .skill-line .language,
+.pusher4  .skill-line .language,
+.pusher5  .skill-line .language,
+.pusher6  .skill-line .language,
+.pusher7  .skill-line .language,
+.pusher8  .skill-line .language,
+.pusher9  .skill-line .language,
+.pusher10 .skill-line .language,
+.pusher11 .skill-line .language,
+.pusher12 .skill-line .language,
+.pusher13 .skill-line .language,
+.pusher14 .skill-line .language,
+.pusher15 .skill-line .language,
+.pusher16 .skill-line .language,
+.pusher17 .skill-line .language {
+display: flex; 
+margin-bottom: 10px;
+}
+
+.pusher1  .skill-line .language span,
+.pusher2  .skill-line .language span,
+.pusher3  .skill-line .language span,
+.pusher4  .skill-line .language span,
+.pusher5  .skill-line .language span,
+.pusher6  .skill-line .language span,
+.pusher7  .skill-line .language span,
+.pusher8  .skill-line .language span,
+.pusher9  .skill-line .language span,
+.pusher10 .skill-line .language span,
+.pusher11 .skill-line .language span,
+.pusher12 .skill-line .language span,
+.pusher13 .skill-line .language span,
+.pusher14 .skill-line .language span,
+.pusher15 .skill-line .language span,
+.pusher16 .skill-line .language span,
+.pusher17 .skill-line .language span {
+width: 66px;
+line-height: 16px;
+/* word-break: break-all !important; */
+overflow: inherit;
+}
+.pusher1 .skill-line .lang,
+.pusher2 .skill-line .lang,
+.pusher3 .skill-line .lang,
+.pusher4 .skill-line .lang,
+.pusher5 .skill-line .lang,
+.pusher6 .skill-line .lang,
+.pusher7 .skill-line .lang,
+.pusher8 .skill-line .lang,
+.pusher9 .skill-line .lang,
+.pusher10 .skill-line .lang,
+.pusher11 .skill-line .lang,
+.pusher12 .skill-line .lang,
+.pusher13 .skill-line .lang,
+.pusher14 .skill-line .lang,
+.pusher15 .skill-line .lang,
+.pusher16 .skill-line .lang,
+.pusher17 .skill-line .lang
+{
+padding-left: 12px !important;
+}
+.pusher1 .skill-line .lang span,
+.pusher3 .skill-line .lang span,
+.pusher4 .skill-line .lang span, 
+.pusher6 .skill-line .lang span,
+.pusher7 .skill-line .lang span,
+.pusher8 .skill-line .lang span,
+.pusher9 .skill-line .lang span,
+.pusher11 .skill-line .lang span,
+.pusher12 .skill-line .lang span,
+.pusher13 .skill-line .lang span,
+.pusher15 .skill-line .lang span,
+.pusher16 .skill-line .lang span,
+.pusher17 .skill-line .lang span{
+width: 7px;
+height: 7px;
+border-radius: 7px;
+background-color: rgb(36, 35, 35);
+display: inline-block;
+margin-right: 5px;
+}
+.pusher5 .skill-line .lang span,
+.pusher14 .skill-line .lang span,
+.pusher2 .skill-line .lang span,
+.pusher10 .skill-line .lang span{
+width: 7px;
+height: 7px;
+border-radius: 7px;
+background-color: rgb(252, 252, 252);
+display: inline-block;
+margin-right: 5px;
+}
+.pusher1  .skill-line .progress,
+.pusher2  .skill-line .progress,
+.pusher3  .skill-line .progress,
+.pusher4  .skill-line .progress,
+.pusher5  .skill-line .progress,
+.pusher6  .skill-line .progress,
+.pusher7  .skill-line .progress,
+.pusher8  .skill-line .progress,
+.pusher9  .skill-line .progress,
+.pusher10 .skill-line .progress,
+.pusher11 .skill-line .progress,
+.pusher12 .skill-line .progress,
+.pusher13 .skill-line .progress,
+.pusher14 .skill-line .progress,
+.pusher15 .skill-line .progress,
+.pusher16 .skill-line .progress,
+.pusher17 .skill-line .progress  {
+position: relative;
+height: 4px;
+display: block;
+width: 100%;
+background-color:rgb(172, 236, 230);
+border-radius: 2px;
+margin: 0.3rem 0 1rem 0;
+overflow: hidden;
+}
+.pusher1  .skill-line .progress,
+.pusher2  .skill-line .progress,
+.pusher3  .skill-line .progress,
+.pusher4  .skill-line .progress,
+.pusher5  .skill-line .progress,
+.pusher6  .skill-line .progress,
+.pusher7  .skill-line .progress,
+.pusher8  .skill-line .progress,
+.pusher9  .skill-line .progress,
+.pusher10 .skill-line .progress,
+.pusher11 .skill-line .progress,
+.pusher12 .skill-line .progress,
+.pusher13 .skill-line .progress,
+.pusher14 .skill-line .progress,
+.pusher15 .skill-line .progress,
+.pusher16 .skill-line .progress,
+.pusher17 .skill-line .progress {
+
+background-color: rgb(153, 153, 153);
+height: 6px;
+overflow: visible;
+}
+.pusher1  .skill-line .progress .determinate,
+.pusher2  .skill-line .progress .determinate,
+.pusher3  .skill-line .progress .determinate,
+.pusher4  .skill-line .progress .determinate,
+.pusher6  .skill-line .progress .determinate,
+.pusher7  .skill-line .progress .determinate,
+.pusher8  .skill-line .progress .determinate,
+.pusher9  .skill-line .progress .determinate,
+.pusher11 .skill-line .progress .determinate,
+.pusher12 .skill-line .progress .determinate,
+.pusher13 .skill-line .progress .determinate,
+.pusher15 .skill-line .progress .determinate,
+.pusher16 .skill-line .progress .determinate,
+.pusher17 .skill-line .progress .determinate {
+position: absolute;
+background-color: inherit;
+top: 0;
+bottom: 0;
+background-color: rgb(34, 34, 34);
+-webkit-transition: width .3s linear;
+transition: width .3s linear;
+}
+
+.pusher5  .skill-line .progress .determinate,
+.pusher2  .skill-line .progress .determinate,
+.pusher14 .skill-line .progress .determinate,
+.pusher10 .skill-line .progress .determinate{
+position: absolute;
+background-color: inherit;
+top: 0;
+bottom: 0;
+background-color: rgb(252, 252, 252);
+-webkit-transition: width .3s linear;
+transition: width .3s linear;
+}
+.pusher1 .resumeMake h1,
+.pusher2 .resumeMake h1,
+.pusher3 .resumeMake h1,
+.pusher4 .resumeMake h1, 
+.pusher6 .resumeMake h1,
+.pusher7 .resumeMake h1,
+.pusher8 .resumeMake h1,
+.pusher9 .resumeMake h1,
+.pusher10 .resumeMake h1,
+.pusher11 .resumeMake h1,
+.pusher12 .resumeMake h1,
+.pusher13 .resumeMake h1,
+.pusher14 .resumeMake h1,
+.pusher15 .resumeMake h1,
+.pusher16 .resumeMake h1,
+.pusher17 .resumeMake h1
+{ 
+font-size: 15px !important;
+line-height: 20px;
+margin-bottom: 0px;
+padding: 5px 0px;
+text-transform: capitalize;
+}
+.pusher5 .resumeMake h1{
+font-size: 13px;
+background-color: rgb(66, 70, 82) ;
+border-left: 10px solid rgb(240, 191, 6);
+padding: 7px 7px 7px 11px;
+color: rgb(255, 255, 255);
+/* word-break: break-all; */
+}
+.pusher1 p, .pusher1 .skill-line p, .pusher1 .skill-line p span,.pusher1 p ul li,
+.pusher2 p, .pusher2 .skill-line p, .pusher2 .skill-line p span, .pusher2 p ul li,
+.pusher3 p, .pusher3 .skill-line p, .pusher3 .skill-line p span, .pusher3 p ul li,
+.pusher4 p, .pusher4 .skill-line p, .pusher4 .skill-line p span, .pusher4 p ul li,
+.pusher5 p, .pusher5 .skill-line p, .pusher5 .skill-line p span, .pusher5 p ul li,
+.pusher6 p, .pusher6 .skill-line p, .pusher6 .skill-line p span, .pusher6 p ul li,
+.pusher7 p, .pusher7 .skill-line p, .pusher7 .skill-line p span, .pusher7 p ul li,
+.pusher8 p, .pusher8 .skill-line p, .pusher8 .skill-line p span, .pusher8 p ul li,
+.pusher9 p, .pusher9 .skill-line p, .pusher9 .skill-line p span, .pusher9 p ul li,
+.pusher10 p, .pusher10 .skill-line p, .pusher10 .skill-line p span, .pusher10 p ul li, 
+.pusher11 p, .pusher11 .skill-line p, .pusher11 .skill-line p span, .pusher11 p ul li,
+.pusher12 p, .pusher12 .skill-line p, .pusher12 .skill-line p span .pusher12 p ul li,
+.pusher13 p, .pusher13 .skill-line p, .pusher13 .skill-line p span, .pusher13 p ul li, 
+.pusher14 p, .pusher14 .skill-line p, .pusher14 .skill-line p span, .pusher14 p ul li,
+.pusher15 p, .pusher15 .skill-line p,  .pusher15 .skill-line p span, .pusher15 p ul li,
+.pusher16 p, .pusher16 .skill-line p, .pusher16 .skill-line p span, .pusher16 p ul li
+.pusher17 p, .pusher17 .skill-line p, .pusher17 .skill-line p span, .pusher17 p ul li {
+
+font-size: 8px;
+  line-height: 18px;
+  margin-bottom: 4px;
+  text-align: justify;
+  word-break: break-word !important;
+  overflow: hidden;
+}
+
+
+.a4{
+ margin: 400px;
+}
+/* header,footer{
+ padding: 40px !important;
+} */
+.pusher1 .resumeLeft,
+.pusher2 .resumeLeft,
+.pusher3 .resumeLeft,
+.pusher5 .resumeLeft, 
+.pusher10 .resumeLeft, 
+.pusher14 .resumeLeft{ 
+padding: 20px 0 30px -2px !important;
+   min-height:845px !important;    
+
+color: rgb(44, 43, 43);
+ /* page-break-inside: avoid;
+page-break-before: always !important;
+word-wrap: break-word !important;   */
+overflow: hidden !important;
+}
+.pusher13 .resumeLeft{
+padding: 0px;
+min-height: 842px;
+color: rgb(44, 43, 43);
+}
+.pusher14 .resumeLeft{ 
+min-height: 842px;
+padding: 8px 13px;
+color: rgb(255, 255, 255);
+background-color: 	rgb(102, 124, 145);
+}
+.pusher15 .resumeLeft{
+padding:0px 19px;
+background: rgb(255, 255, 255);
+min-height:845px !important;    
+}
+.pusher7 .resumeLeft,
+.pusher8 .resumeLeft{
+  min-height:845px !important;    
+background: rgb(239, 242, 247);
+}
+.pusher11 .left_part{
+  min-height:845px !important;    
+background: rgb(239, 242, 247);
+}
+
+.pusher11 .resumeLeft{ 
+overflow: hidden;
+}
+.pusher4 .resumeLeft, 
+.pusher16 .resumeLeft, 
+.pusher6 .resumeLeft{
+padding: 10px 21px; 
+color: rgb(44, 43, 43);
+background-color:  rgb(255, 255, 255);
+}
+
+.pusher14 .resumeLeft{
+color:  rgb(255, 255, 255) !important;
+}
+.pusher7 .resumeLeft,
+.pusher9 .resumeLeft,
+.pusher8 .resumeLeft{
+padding: 0px;
+}
+
+.pusher6 .resumeLeft .address_bar ul li a,
+.pusher15 .resumeLeft .address_bar ul li a  {
+margin-top: 0px;
+margin-bottom: 0px;
+font-size: 11px;
+line-height: 20px;
+display: contents !important;
+
+
+padding: 0px !important;
+}
+.pusher6 .resumeLeft .header-cen{
+text-align: center;
+margin-top: 4px !important;
+margin: auto;
+}
+.pusher6 .resumeLeft h1 {
+font-size: 24px;
+color:  rgb(255, 255, 255);
+display: inline-block;
+border: 1px solid rgb(193, 211, 65);
+padding: 5px 20px;
+}
+.pusher6 .resumeLeft{
+background-color:	rgb(74, 74, 74);
+}
+/* {
+padding: 0px 10px;
+} */
+.pusher1 .workExp .custom-content,
+.pusher2 .workExp .custom-content,
+.pusher3 .workExp .custom-content,
+.pusher4 .workExp .custom-content,
+.pusher5 .workExp .custom-content{
+  font-size: 8px;
+  line-height: 18px;
+  letter-spacing: 0.5px;
+  padding: 0px 13px 0px 10px !important;
+/* overflow: hidden;
+page-break-inside: avoid;
+page-break-before: always !important;
+word-wrap: break-word !important;  
+overflow: hidden !important; */
+}
+.pusher7 .workExp{
+padding: 0px 12px 0px 4px;
+min-height:845px !important;    
+}
+.pusher12 .workExp {
+padding: 0px 12px 0px 10px;
+min-height:845px !important;    
+}
+.pusher2 .workExp,
+.pusher3 .workExp,
+.pusher4 .workExp,
+.pusher5 .workExp,
+.pusher6 .workExp, 
+.pusher8 .workExp, 
+.pusher9 .workExp,
+.pusher11 .workExp, 
+.pusher14 .workExp,
+.pusher15 .workExp,
+.pusher16 .workExp, 
+.pusher18 .workExp
+{ 
+  min-height:845px !important;    
+padding: 0px 15px 40px 10px !important;
+ /* padding: 0px 19px; */
+}
+.pusher2 .workExp,
+.pusher3 .workExp,
+.pusher4 .workExp,
+.pusher5 .workExp,
+.pusher6 .workExp, 
+.pusher8 .workExp, 
+.pusher9 .workExp,
+.pusher11 .workExp, 
+.pusher15 .workExp,
+.pusher16 .workExp, 
+.pusher18 .workExp
+{ 
+padding: 0px 5px 40px 10px !important;
+min-height:845px !important;    
+ /* padding: 0px 19px; */
+}
+
+.pusher14 .workExp{
+padding: 0px 12px 40px 10px !important;
+min-height:845px !important;    
+}
+.pusher17 .workExp{
+padding: 8px 15px !important;
+min-height:845px !important;    
+}
+.pusher13 .workExp{
+padding: 0px;
+min-height:845px !important;    
+}
+.pusher10 .workExp
+{ 
+  min-height:845px !important;    
+  padding: 0px 12px 10px 1px;
+}
+.pusher1 .skill-line,
+.pusher2 .skill-line,
+.pusher3 .skill-line,
+.pusher4 .skill-line, 
+.pusher6 .skill-line,
+.pusher7 .skill-line,
+.pusher10 .skill-line,
+/* .pusher11 .skill-line, */
+.pusher12 .skill-line,
+.pusher12 .skill-line,
+/* .pusher15 .skill-line, */
+/* .pusher16 .skill-line, */
+/* .pusher17 .skill-line, */
+.pusher18 .skill-line
+{ 
+padding: 0px 5px 0px 1px;
+}
+
+.pusher9 .skill-line{
+padding: 0px 5px 0px 7px;
+}
+
+
+.pusher5 .skill-line, 
+.pusher14 .skill-line
+{ 
+padding: 0px 8px 0px 0px;
+}
+.pusher8 .skill-line {
+padding: 0px 11px 0px 12px;
+}
+
+.pusher1 span.float-r,
+.pusher2 span.float-r,
+.pusher3 span.float-r,
+.pusher4 span.float-r,
+.pusher5 span.float-r,
+.pusher6 span.float-r,
+.pusher7 span.float-r,
+.pusher8 span.float-r,
+.pusher9 span.float-r,
+.pusher10 span.float-r,
+.pusher11 span.float-r,
+.pusher12 span.float-r,
+.pusher12 span.float-r,
+.pusher13 span.float-r,
+.pusher14 span.float-r,
+.pusher15 span.float-r,
+.pusher16 span.float-r,
+.pusher17 span.float-r,
+.pusher18 span.float-r {
+float: right !important;
+/* height: 0px; */
+}
+.pusher17 .workExp:after {
+position: absolute;
+content: '';
+top: 0px !important;
+right: 0px !important;
+border-right: 1.0999999999999943px solid 	rgb(76, 98, 119);
+height: 100%;
+}
+.pusher1  .resumeMake .skill-line h4{
+  padding: 6px 8px 0px;
+  font-size: 11px;
+  line-height: 10px;
+  margin-bottom: 0.4rem !important;
+  font-weight: 500 !important; 
+
+}
+.pusher2  .resumeMake .skill-line h4,
+.pusher3  .resumeMake .skill-line h4,
+.pusher4  .resumeMake .skill-line h4,
+.pusher6  .resumeMake .skill-line h4,
+.pusher7  .resumeMake .skill-line h4,
+.pusher8  .resumeMake .skill-line h4,
+.pusher9  .resumeMake .skill-line h4,
+.pusher10 .resumeMake .skill-line h4,
+.pusher11 .resumeMake .skill-line h4,
+.pusher12 .resumeMake .skill-line h4,
+.pusher12 .resumeMake .skill-line h4,
+.pusher13 .resumeMake .skill-line h4,
+.pusher14 .resumeMake .skill-line h4,
+.pusher15 .resumeMake .skill-line h4,
+.pusher16 .resumeMake .skill-line h4,
+.pusher17 .resumeMake .skill-line h4,
+.pusher1  .workExp h4,
+.pusher2  .workExp h4,
+.pusher3  .workExp h4,
+.pusher4  .workExp h4, 
+.pusher6  .workExp h4,
+.pusher7  .workExp h4,
+.pusher8  .workExp h4,
+.pusher9  .workExp h4,
+.pusher10 .workExp h4,
+.pusher11 .workExp h4,
+.pusher12 .workExp h4,
+.pusher13 .workExp h4,
+.pusher14 .workExp h4,
+.pusher15 .workExp h4, 
+.pusher16 .workExp h4,
+.pusher17 .workExp h4{
+padding: 8px 0px 0px;
+font-size: 8px;
+  line-height: 18px;
+margin-bottom: 0.4rem !important;
+font-weight: 600 !important;
+}
+.pusher5  .workExp h4 {
+font-size: 8px;
+  line-height: 18px;
+background-color: rgb(216, 216, 216);
+border-left: 10px solid rgb(240, 191, 6);
+padding: 7px 0 7px 14px;
+color: rgb(0, 0, 0);
+margin-bottom: 9px;
+}
+.pusher1 h1{
+padding: 5px 0 5px 9px;
+color: rgb(255, 255, 255) !important;
+} 
+.pusher1  .resumeMake .custom-content-wrap,
+.pusher2  .resumeMake .custom-content-wrap,
+.pusher3  .resumeMake .custom-content-wrap,
+.pusher4  .resumeMake .custom-content-wrap,
+.pusher5  .resumeMake .custom-content-wrap,
+.pusher6  .resumeMake .custom-content-wrap,
+.pusher7  .resumeMake .custom-content-wrap,
+.pusher8  .resumeMake .custom-content-wrap,
+.pusher9  .resumeMake .custom-content-wrap,
+.pusher10 .resumeMake .custom-content-wrap,
+.pusher11 .resumeMake .custom-content-wrap,
+.pusher12 .resumeMake .custom-content-wrap,
+.pusher13 .resumeMake .custom-content-wrap,
+.pusher14 .resumeMake .custom-content-wrap,
+.pusher15 .resumeMake .custom-content-wrap,
+.pusher16 .resumeMake .custom-content-wrap,
+.pusher17 .resumeMake .custom-content-wrap,
+.pusher18 .resumeMake .custom-content-wrap {
+border-bottom: 0.2px solid rgb(221, 221, 221) !important;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;  
+}
+.pusher1  .address_bar ul,
+.pusher2  .address_bar ul,
+.pusher3  .address_bar ul,
+.pusher4  .address_bar ul,
+.pusher5  .address_bar ul,
+.pusher6  .address_bar ul,
+.pusher7  .address_bar ul,
+.pusher8  .address_bar ul,
+.pusher9  .address_bar ul,
+.pusher10 .address_bar ul,
+.pusher11 .address_bar ul,
+.pusher12 .address_bar ul,
+.pusher13 .address_bar ul,
+.pusher14 .address_bar ul,
+.pusher15 .address_bar ul,
+.pusher16 .address_bar ul,
+.pusher17 .address_bar ul,
+.pusher18 .address_bar ul {
+list-style-type: none;
+padding: 0px !important;
+margin: 0px !important;
+}
+.pusher2 .address_bar ul li a,
+.pusher3 .address_bar ul li a,
+.pusher4 .address_bar ul li a,
+.pusher7 .address_bar ul li a,
+.pusher8 .address_bar ul li a,
+.pusher9 .address_bar ul li a,
+.pusher10 .address_bar ul li a,
+.pusher11 .address_bar ul li a,
+.pusher12 .address_bar ul li a,
+.pusher13 .address_bar ul li a,
+.pusher14 .address_bar ul li a,
+.pusher17 .address_bar ul li a,
+.pusher16 .address_bar ul li a,
+.pusher5 .address_bar ul li a{
+margin-top: 0;
+margin-bottom: 0;
+font-size: 8px;
+  line-height: 18px;
+text-align: left;
+display: flex !important;
+word-break: break-all;
+width: 100%;
+padding: 0 !important;
+}
+/* .A4 {
+background: rgb(255, 255, 255);
+width: 21cm;
+height: 29.7cm;
+display: block;
+margin: 0 auto;
+padding: 10px 25px;
+margin-bottom: 0.5cm;
+box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+overflow-y: scroll;
+box-sizing: border-box;
+} */
+.pusher2 .address_bar ul li a i,
+.pusher3 .address_bar ul li a i,
+.pusher7 .address_bar ul li a i,
+.pusher8 .address_bar ul li a i,
+.pusher9 .address_bar ul li a i,
+.pusher10 .address_bar ul li a i,
+.pusher11 .address_bar ul li a i,
+.pusher12 .address_bar ul li a i,
+.pusher13 .address_bar ul li a i,
+.pusher14 .address_bar ul li a i,
+.pusher5 .address_bar ul li a i  {
+color: rgb(27, 74, 255);
+/* width: 21px !important;
+height: 20px !important; */
+font-size: 8px;
+  line-height: 18px;
+text-align: left;
+margin-bottom: 4px !important;
+margin-right: 7px;
+margin-top: 0px !important;
+ 
+}
+.pusher5 .resumeLeft h4 {
+text-transform: uppercase;
+font-size: 11px;
+  line-height: 17px;
+background-color: rgb(66, 70, 82);
+border-left: 10px solid 	rgb(240, 191, 6);
+padding: 10px 0 10px 11px;
+color: rgb(255, 255, 255);
+width: 100%;
+}
+.pusher17 .resumeLeft{
+background-color: 	rgb(255, 255, 255);
+padding: 10px 16px;
+}
+
+/* background----------------------- */
+.pusher6 .address,.pusher15 .address{
+background: 	rgb(66, 70, 82);
+padding: 8px 15px;
+}
+.pusher12 .workExp{
+background-color: rgb(210, 254, 255);
+}
+.pusher1 .title_bar, .pusher1 .workExp h4,
+.pusher11 .resumeLeft{
+background-color: rgb(251, 209, 72) !important;
+}
+.pusher2 .title_bar {
+background-color: rgb(27, 74, 255); 
+}
+.pusher6 .address_bar ul li,
+.pusher15 .address_bar ul li {
+display: inline;
+margin-right:3px;
+}
+.pusher6 .address_bar ul li a i,
+.pusher15 .address_bar ul li a i {
+padding-right: 5px;
+}
+.pusher6 .address_bar ul li a{
+ margin-right: 5px;
+}
+.pusher15 .address_bar ul li a {
+color: rgb(255, 255, 255); 
+padding-right: 4px;
+}
+.pusher6 .address_bar ul li a:hover,
+.pusher2 .address_bar ul li a:hover, .pusher10 .resumeLeft h4,
+.pusher2 .resumeLeft h4,
+.pusher2 .resumeLeft,
+.pusher2 .resumeLeft h1,
+.pusher14 .resumeLeft h4, .pusher14 .resumeLeft h1,
+.pusher15 .address_bar ul li a:hover
+{
+color:rgb(255, 255, 255);
+}
+.pusher3 .title_bar,
+.pusher10 .title_bar,
+.pusher8 .title_bar, .pusher5 .resumeLeft, .pusher10 .resumeLeft{
+background-color: rgb(42, 42, 43); 
+}
+.pusher9 .header-wrap{
+background-color: rgb(42, 42, 43); 
+padding: 8px 15px;
+}
+.pusher4 .title_bar,.pusher11 .title_bar,.pusher14 .title_bar{
+background-color: rgb(250, 250, 250); 
+}
+.pusher5 .resumeLeft, .pusher10 .resumeLeft,
+.pusher14 .address_bar ul li a i {
+color: rgb(250, 250, 250); 
+}
+.pusher1 .resumeMake h4,.pusher1 .workExp{
+background-color: rgb(0, 0, 0);
+}
+
+/* color----------------------- */
+.pusher7 .address_bar ul li a i,
+.pusher6 .address_bar ul li a i,
+.pusher3 .address_bar ul li a i,
+.pusher10 .address_bar ul li a i,
+.pusher12 .address_bar ul li a i,
+.pusher6 .address_bar ul li a,
+.pusher13 .address_bar ul li a i,
+.pusher9 .address_bar ul li a i, 
+.pusher11 .address_bar ul li a i,
+.pusher8 .address_bar ul li a i{
+color: rgb(2, 2, 2);
+font-size: 8px;
+line-height: 18px;
+}
+.pusher1 .resumeMake h4,.pusher1 .workExp,
+.pusher2 .address_bar ul li a i,
+.pusher2 .address_bar ul li a,
+.pusher15 .address_bar ul li a i{
+color: rgb(255, 255, 255);
+}
+
+.pusher4 .title_bar,
+.pusher5 .title_bar,
+.pusher11 .title_bar,
+.pusher12 .title_bar,
+.pusher13 .title_bar,
+.pusher15 .title_bar,
+.pusher14 .title_bar {
+color: rgb(20, 20, 20) !important; 
+}
+.pusher2 .resumeMake,
+.pusher3  .workExp,
+.pusher4  .workExp,
+.pusher5  .workExp,
+.pusher6  .workExp,
+.pusher7  .workExp,
+.pusher8  .workExp,
+.pusher9  .workExp,
+.pusher10 .workExp,
+.pusher11 .workExp,
+.pusher13 .workExp,
+.pusher14 .workExp,
+.pusher15 .workExp,
+.pusher16 .workExp,
+.pusher17 .workExp,
+.pusher12 .resumeMake,
+.pusher13 .resumeMake,
+.pusher18 .workExp{
+  min-height:845px !important;    
+background-color: rgb(255, 255, 255);
+}
+.pusher4  .workExp,.pusher6  .workExp,
+.pusher7  .workExp,
+.pusher7  .resumeLeft,
+.pusher8  .workExp,
+.pusher12 .resumeLeft,
+.pusher14 .resumeLeft,
+.pusher14  .workExp,
+.pusher15  .workExp,
+.pusher16  .workExp,
+.pusher17  .workExp,
+.pusher12  .workExp,
+.pusher11  .workExp,
+.pusher9  .workExp,
+.pusher10  .workExp,
+.pusher8  .resumeLeft{
+min-height:842px;
+}
+.pusher1 .resumeMake h6{
+color:rgb(240, 191, 6);
+}
+.pusher1 .resumeLeft{
+background-color:rgb(255, 197, 1);
+}
+
+.pusher1 .workExp h4{
+color: rgb(2, 2, 2);
+color: rgb(2, 2, 2);
+  padding: 4px !important;
+  page-break-after: avoid;
+  overflow: hidden;
+  margin-bottom: 12px !important;
+page-break-after: avoid;
+overflow: hidden;
+}
+/* background----------------------- */
+.pusher1 .title_bar,
+.pusher2 .title_bar,
+.pusher3 .title_bar,
+.pusher4 .title_bar,
+.pusher5 .title_bar,
+.pusher10 .title_bar,
+.pusher11 .title_bar,
+.pusher12 .title_bar,
+.pusher13 .title_bar,
+.pusher14 .title_bar,
+.pusher15 .title_bar,
+.pusher8 .title_bar,
+.pusher6 .title_bar  {
+color: rgb(255, 255, 255);
+padding: 4px 11px;
+border-radius: 3px;
+line-height: 18px;
+margin-top: 0px !important;
+margin-bottom: 17px !important;
+top: 5px;
+position: relative; 
+}
+.pusher7 .title_bar, .pusher9 .title_bar {
+color: rgb(3, 3, 3);
+padding: 4px 11px;
+background-color:rgb(255, 255, 255);
+border-radius: 3px;
+line-height: 18px;
+margin-top: 0px !important;
+margin-bottom: 17px !important;
+top: 5px;
+position: relative; 
+}
+.pusher12 .border-top-left-radius {
+background-color: rgb(210, 254, 255);
+border-top-left-radius: 25px;
+padding: 31px 7px 9px 11px;
+background-color: rgb(210, 254, 255);
+border-top-left-radius: 31px;
+}
+.pusher13 .border-top-right-radius,
+.pusher13 .custom-content-wrap {
+background-color: rgb(255, 236, 215);
+padding: 10px;
+margin-bottom: 8px !important;
+}
+.pusher11 .title_bar,
+.pusher13 .title_bar,
+.pusher14 .title_bar,
+.pusher12 .title_bar {
+margin-top: 0px !important;
+}
+.pusher13 .br{
+border-bottom: 1px solid rgb(221, 221, 221);
+padding-bottom: 9px;
+padding-top: 13px; 
+}
+
+.pusher1  .resumeMake h6,
+.pusher2  .resumeMake h6,
+.pusher3  .resumeMake h6,
+.pusher4  .resumeMake h6,
+.pusher5  .resumeMake h6,
+.pusher6  .resumeMake h6,
+.pusher7  .resumeMake h6,
+.pusher8  .resumeMake h6,
+.pusher9  .resumeMake h6,
+.pusher10 .resumeMake h6,
+.pusher11 .resumeMake h6,
+.pusher12 .resumeMake h6,
+.pusher13 .resumeMake h6,
+.pusher14 .resumeMake h6,
+.pusher15 .resumeMake h6,
+.pusher16 .resumeMake h6,
+.pusher17 .resumeMake h6,
+.pusher18 .resumeMake h6{
+font-size: 12px !important;
+line-height: 13px;
+}
+.pusher1 .address_bar ul li{
+display: block;
+}
+.pusher3 .address_bar ul li {
+display: inline-block;
+}
+.pusher1  .resume-item-details img,
+.pusher2  .resume-item-details img,
+.pusher3  .resume-item-details img,
+.pusher6  .resume-item-details img,
+.pusher10 .resume-item-details img,
+.pusher11 .resume-item-details img,
+.pusher12 .resume-item-details img,
+.pusher14 .resume-item-details img,
+.pusher15 .resume-item-details img,
+.pusher16 .resume-item-details img,
+.pusher17 .resume-item-details img,
+.pusher18 .resume-item-details img { 
+width: 106px;
+  height: 106px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  margin-top: 8px !important;
+  margin: auto;
+  overflow: hidden;
+  margin-bottom: 15px;
+  display: block;
+  border-radius: 50% !important;
+}
+.pusher7 .custom-content_2,
+.pusher10 .custom-content_2, 
+.pusher15 .custom-content_2, 
+.pusher8 .custom-content_2
+{
+background: orange;
+padding: 14px 14px;
+}
+.pusher11 .custom-content_2{
+padding: 8px 0px 0px 31px;
+}
+
+.pusher7 .skills,
+.pusher8 .skills {
+  padding: 0 5px;
+}
+
+.pusher5  .resume-item-details img{
+width: 100%;
+height:200px;
+-o-object-fit: cover;
+object-fit: cover;
+margin-top: 8px !important;
+margin: auto;
+overflow: hidden;
+display: block;
+border-radius: 0px !important;
+}
+.pusher9  .resume-item-details img{
+width: 100%;
+height:170px;
+-o-object-fit: cover;
+object-fit: cover;
+margin-top: 0px !important;
+margin: auto;
+overflow: hidden;
+display: block;
+border-radius: 0px !important;
+border-radius: 5px;
+}
+.pusher7  .resume-item-details img, 
+.pusher10  .resume-item-details img,  
+.pusher11 .resume-item-details img, 
+.pusher8  .resume-item-details img{
+width: 100%;
+height:200px;
+-o-object-fit: cover;
+object-fit: cover;
+margin-top: 0px !important;
+margin: auto;
+overflow: hidden;
+display: block;
+border-radius: 0px !important;
+}
+.pusher13 .resume-item-details img,
+.pusher14 .resume-item-details img,
+.pusher16 .resume-item-details img,
+.pusher12  .resume-item-details img{
+width: 100%;
+height:200px;
+-o-object-fit: cover;
+object-fit: cover;
+margin-top: 12px !important;
+margin: auto;
+overflow: hidden;
+display: block;
+border-radius: 10px !important;
+}
+.pusher4  .resume-item-details img{
+width: 100%;
+height:180px;
+-o-object-fit: cover;
+object-fit: cover;
+margin-top: 5px !important;
+margin: auto;
+overflow: hidden;
+display: block;
+border-radius: 10px !important;
+}
+.pusher16 .resume-item-details img{
+width: 100%;
+height:150px;
+-o-object-fit: cover;
+object-fit: cover;
+margin-top: 12px !important;
+margin: auto;
+overflow: hidden;
+display: block;
+border-radius: 10px !important;
+}
+.pusher3 .address_bar ul li a, 
+.pusher16 .address_bar ul li a,
+.pusher4 .address_bar ul li a{
+font-size: 8px;
+  line-height: 18px;
+margin:3px 0;
+display: block;
+}
+.pusher3 .address_bar ul li a i { 
+margin-right: 8px; 
+}  
+.pusher4 .address_bar ul li a i,
+.pusher17 .address_bar ul li a i,
+.pusher16 .address_bar ul li a i{
+margin-right: 8px;
+line-height: 16px;
+} 
+.pusher3 .address_bar ul li, 
+.pusher16 .address_bar ul li, 
+/* .pusher17 .address_bar ul li,  */
+.pusher4 .address_bar ul li{ 
+margin-right: 15px; 
+}
+.pusher1 .address_bar ul li a {
+color: rgb(225, 225, 225);
+margin-top: 0;
+margin-bottom: 0;
+font-size: 8px;
+  line-height: 18px;
+text-align: left;
+display: flex !important;
+word-break: break-all;
+width: 100%;
+padding: 0 !important;
+}
+.pusher1 .address_bar ul li a i{
+color: rgb(251 209 72);
+  background-color: rgb(255, 255, 255);
+  width: 24px;
+  height: 20px;
+  border-left: 3px solid rgb(251 209 72);
+  padding: 3px 4px;
+  height: 23px !important;
+  font-size: 12px !important;
+  text-align: left;
+  margin-bottom: 4px !important;
+  margin-right: 9px;
+  margin-top: 2px !important;
+  line-height: 20px;
+
+} 
+/* .a4 .pusher1 .resumeLeft,.A4 .pusher1 .resumeLeft,
+.page .pusher1 .resumeLeft,.A4 .page .pusher1 .resumeLeft{
+min-height: 845px !important;
+} */
+* ul {
+margin-top: 0;
+margin-bottom: 0rem;
+padding-left: 0px;
+margin-left: 0px;
+list-style-type: none;
+}
+
+* ul ul{
+list-style-type: disc;
+margin-left: 11px;
+padding-left: 4px;
+}
+* ol{
+list-style-type: decimal;
+margin-left: 5px;
+padding-left: 0px;
+}
+* ul ol li{
+list-style-type: decimal;
+margin-left: 8px;
+padding-left: 5px;
+}
+.page {
+      width: 210mm;
+      min-height: 297mm;
+      padding: 20mm;
+      margin: 10mm auto; 
+      border-radius: 5px; 
+  }
+
+/* ----------print---------------- */
+@page {
+size: A4; 
+}
+@media print {
+html, body {
+  width: 210mm;
+  height: 297mm;
+}
+/* ... the rest of the rules ... */
+}
+@media print {
+      html, body {
+          width: 210mm;
+          height: 297mm;  
+      
+      }
+      .page {
+    padding: 5mm;  
+          border: initial;
+          border-radius: initial;
+          width: initial;
+          min-height: initial;
+          box-shadow: initial;
+          background: initial;
+          page-break-after: always;
+      }
+  .pusher1 .resumeLeft {
+    padding: 5mm;
+    /* min-height: 5545px;   */
+          border: initial;
+          border-radius: initial;
+          width: initial;
+          /* min-height: initial; */
+          box-shadow: initial;
+          background: initial;
+          page-break-after: always;
+  }
+  }
+
+.pusher1 {
+  position: relative;
+  overflow: hidden; 
+/* min-height: 5545px;   */
+  page-break-after: always;
+}
+.page.landscape {
+  width: 11.7in;
+  height: 8.2in;
+}
+.pusher1.portrait {
+  width: 8.3in;
+  height: 11.6in;
+margin:4in;
+padding: 1.4in;
+
+}
+.pusher1.portrait {
+  width: 8.3in;
+  height: 11.6in; 
+min-height: 11.6in; 
+padding: 1.4in;
+}
+
+@page :first {
+padding-bottom: 120px !important;
+padding-top: 120px !important;
+}
+
+
+#screen{
+  width: 595px; 
+  /* padding: 15px 25px; */
+  overflow: hidden;
+  padding: 15px 25px 30px 15px;
+  /* line-height: 18px; */
+  min-height: 845px !important;  
+  /* word-wrap: break-word !important;
+  word-break: break-word !important;
+  page-break-inside: avoid !important;
+  page-break-before: always !important; */
+
+  /* width: 595px;
+  height: auto !important;  
+  overflow: hidden;
+  line-height: 18px;
+  min-height: 845px !important;  
+  word-wrap: break-word !important;
+  word-break: break-word !important;
+  page-break-inside: avoid !important;
+  page-break-before: always !important;  */
+}
+/* template css end */
+/* -----------------------------template-------------------------------- */
+/*  
+.paginated-view  .page {
+      margin: 0 auto;
+      margin-bottom: 0.5cm;
+  }
+  .page {
+    display: block;
+    background: white;
+    box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    position: relative;
+   
+  }
+  .page .page-number {
+    position: absolute;
+    bottom: 10px;
+    right: 30px;
+    color: #555;
+    font-size: 11px;
+    font-family: monospace;
+  }
+  
+  /* .A4 {
+    width: 595px;
+    height: 842px;
+    padding: 10px 25px;
+    display: block;
+
+  } */
+  
+  .A3 {
+    width: 842px;
+    height: 1191px;
+    padding: 10px 25px;
+  }
+  .skill-heading {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  .single-skill {
+    display: flex;
+    border: 1px solid #ccc;
+  }
+  .single-skill .skill-name {
+    flex: 1;
+    text-align: left;
+    font-weight: 600;
+    border-right: 1px solid #ccc;
+    padding: 5px;
+  }
+    .skill-value {
+      flex: 2;
+      text-align: left;
+      padding: 5px;
+    }
+
+    .btn-cv{
+    border: none;
+    background-color: #2f38c9;
+    color: #fff;
+    }
+    /* .ng2-pdf-viewer-container{
+      overflow-x: auto;
+      position: absolute;
+      height: 100%;
+      overflow: hidden;
+      width: 100%;
+      -webkit-overflow-scrolling: touch;
+  } */
+   
+.ng2-pdf-viewer-container {
+  overflow-x: auto;
+  position: absolute;
+  top: -180px;
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+  transform: scale(0.6);
+}
+
+img, svg {
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+.pagin-wrap {
+  display: flex;
+  padding-left: 5px;
+  list-style: none;
+  text-align: center;
+  margin: auto;
+  justify-content: center;
+  width: 44%;
+  padding: 0px;
+  margin-bottom: 12px;
+}
+ 
+
+.pagin-wrap {
+  display: flex;
+  padding-left: 5px;
+  list-style: none;
+  text-align: center;
+  margin: auto;
+  justify-content: center;
+  width: 40%;
+  padding: 0px;
+  margin-bottom: 12px;
+}
+.zoom {
+  display: none; 
+}
+ 
+.zoom .btn{
+  position: fixed;
+    top: 53vh;
+    right: 22vw;
+    margin: auto;
+    z-index: 5;
+}
+.zoom .btn i{
+  font-size: 18px;
+  padding: 18px;
+}
+.resumePreview:hover .zoom{
+display: block !important; 
+}
+.pagination-wrap a{
+  cursor: pointer;
+}
+.loginText {
+    color: #000;
+    font-size: 12px;
+    line-height: 45px;
+    text-align: center;
+} 
+
+.small.mt-lg-2.d-block{
+  font-size: 13px;
+}
+/* .custom-content-wrap p ul, .custom-content-wrap p ul, ul {
+  list-style-type: disc !important;
+  padding-left: 5px !important;
+} */
+* ul {
+  margin-top: 0;
+  margin-bottom: 0rem;
+  padding-left: 0px;
+  margin-left: 0px;
+}
+ 
+* ul ul{
+  list-style-type: disc;
+  margin-left: 11px;
+  padding-left: 4px;
+}
+* ol{
+  list-style-type: decimal;
+  margin-left: 5px;
+  padding-left: 0px;
+}
+* ul ol li{
+  list-style-type: decimal;
+  margin-left: 8px;
+  padding-left: 5px;
+}
+
+.skillIcon{
+  line-height: 25px;;
+  color: #0d24ff;
+  cursor: pointer;
+}
+.skillIcon .trash-icon{
+  font-size: 23px !important;
+  color: #f00 !important;
+}
+.skillIcon .material-icons{
+  line-height: 38px;;
+  color: #0d24ff;
+  cursor: pointer;
+}
+.sktoggle{
+  display: block; 
+  color: #3f51b5; 
+}
+.sktoggled{
+  display: none;
+  
+}
+.mat-button-toggle-checked .sktoggled{
+  display: block;
+  color: #3f51b5;
+}
+.mat-button-toggle-checked .sktoggle{
+  display: none;
+} */
+ 
+.pull-right{
+  float: right;
+  line-height: 24px;
+  color: #666666;
+  font-size: 14px;
+}
+.d-block.modal.fade.show {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  background-color: rgba(0, 0, 0, 0.15);
+  z-index: 5599;
+}
+.d-block.modal .modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #fff !important;
+  background-clip: padding-box;
+  border: 1px solid rgb(0 0 0 / 0%);
+  border-radius: 1.5rem;
+  outline: 0;
+  overflow: hidden;
+}
+.d-block.modal .wrap-modal {
+  padding: 15px 27px 0px 0px !important;
+  min-height: 70vh !important;
+  max-height: 70vh !important;
+  overflow: hidden;
+}
+.d-block.modal .btn-close{
+  box-sizing: content-box;
+  width: 1em;
+  height: 1em;
+  padding: 0.25em 0.25em;
+  color: #000;
+  line-height: 15px;
+  text-align: center;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  opacity: .5;
+  position: absolute;
+  right: 24px;
+  top: 14px;
+}
+/* .modal-dialog.modal-dialog-scrollable {
+  transition: transform 0.3s ease-out;
+  transform: translate(0, 32px);
+  width: 70% !important;
+  overflow: hidden;
+  top: 30px;
+} */
+/* .modal.fade .modal-dialog {
+    transition: transform 0.3s ease-out;
+    transform: translate(0, -50px);
+    width: 70% !important;
+    top: 30px;
+    position: fixed;
+    top: 25vh;
+    left: 20%;
+}
+.modal-dialog-scrollable .modal-body {
+  max-height: 100%;
+  overflow: hidden;
+   top: 120px;  
+}
+.modal-dialog-scrollable .modal-content {
+  max-height: 100%;
+  overflow: hidden;
+  position: fixed;
+  top: 120px;  
+} */
+
+
+.pull-right {
+  float: right;
+  line-height: 24px;
+  color: #666666;
+  font-size: 14px;
+}

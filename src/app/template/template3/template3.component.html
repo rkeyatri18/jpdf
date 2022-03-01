@@ -1,0 +1,321 @@
+<div class="m-auto">
+    <div class="col-md-10">
+        <button class="btn btn-primary" (click)="downloadPdf()">download pdf</button>
+    </div>
+    </div>
+        <div [style.display]="showModal ? 'block' : 'none'" class="modal" id="imagemodal" tabindex="-1" role="dialog"
+        aria-labelledby="myModalLabel" aria-hidden="true">
+        <div #wrap class="wrap">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div  *ngIf="loader">
+                            <ngx-skeleton-loader count="15"  animation="pulse"></ngx-skeleton-loader>
+                        </div>
+                        <div  *ngIf="!loader">
+                            <div class="col-12" >
+                                <div class="pagination-wrap">
+    
+                                   <div class="row">
+                                    <div class="col-md-7">
+                                        <div class="pagin-wrap">
+                                            <div class="col-lg-12">
+                                                <div class="row m-0">
+                                                    <div class="col-lg-2 col-md-2">
+                                                        <button class="btn-cv" (click)="previousPage()" [disabled]="page === 1"><i
+                                                                class="fa fa-angle-left"></i></button>
+                                                    </div>
+                                                    <div class="col-lg-8 col-md-4">
+                                                        <p>{{ page }} / {{ totalPages }}</p>
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-2">
+                                                        <button class="btn-cv" (click)="nextPage()"
+                                                            [disabled]="totalPages === 1 || page === totalPages"><i
+                                                                class="fa fa-angle-right"></i></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a class="pull-right" (click)="hide()">Back To Editor</a>
+                                    </div>
+                                   </div>
+                                  
+                                </div>
+                            </div>
+                            <pdf-viewer [src]="pdfsrc" [show-all]="false" [render-text]="true" [original-size]="true"
+                                [page]="page" (after-load-complete)="afterLoadComplete($event)" style="height: 845px"
+                                [original-size]="false" [render-text]="true"></pdf-viewer>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="zoom">
+        <button class="btn btn-primary" (click)="downloadImage()"><i class="fas fa-expand"></i></button>
+    </div>
+        
+<div  #screen class="pusher3"> 
+            <div class="row">
+                <div class="resumeMake position-relative ">
+                    <div class="row"> 
+                        <!-- [ngStyle]="{'background':(data?.heading?.color_name)?data?.heading?.color_name:''}" -->
+                        <aside class="col-4 resumeLeft" [ngStyle]="{'background':(data?.heading?.color_name)?data?.heading?.color_name:''}"> 
+                            <div class="resume-item" *ngIf="data?.heading?.resume_pic">
+                                <div class="row"> 
+                                    <div class="col-12 "> 
+                                        <div class="resume-item-details">
+                                            <img src="{{(data?.heading?.resume_pic !='')?'http://makemyresume.co/resume/webroot/img/profile_pic/'+data?.heading?.resume_pic:'../assets/img/image.jpg'}}"
+                                            alt="Photo" />
+                                            <!-- <img src="../../assets/images/testiImg1.jpg" class="img-fluid"> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="skills resume-item mt-3">  
+                                <div class="col-lg-12 pl-md-0 skill-line mb-2" *ngIf="data?.skills"  >
+                                    <div  class="custom-content-wrap">
+                                    <h4 class="pb-2">Skills </h4>
+                                    
+                                    <div *ngFor="let skl of data?.skills">
+                                        <div><span>{{skl.skill}}</span> </div>
+                                        <div *ngIf="skl.skill_level=='Novice'">
+                                            <div class="progress">
+                                                <div class="determinate" style="width: 60%;"></div>
+                                            </div>
+                                        </div>
+                                        <div *ngIf="skl.skill_level=='Beginner'">
+                                            <div class="progress">
+                                                <div class="determinate" style="width: 70%;"></div>
+                                            </div>
+                                        </div>
+                                        <div *ngIf="skl.skill_level=='Skillful'">
+                                            <div class="progress">
+                                                <div class="determinate" style="width: 80%;"></div>
+                                            </div>
+                                        </div>
+                                        <div *ngIf="skl.skill_level=='Experienced'">
+                                            <div class="progress">
+                                                <div class="determinate" style="width: 90%;"></div>
+                                            </div>
+                                        </div>
+                                        <div *ngIf="skl.skill_level=='Expert'">
+                                            <div class="progress">
+                                                <div class="determinate" style="width: 100%;"></div>
+                                            </div>
+                                        </div>
+                                    </div></div>       
+                                </div>
+                                <div class="col-lg-12 pl-md-0 skill-line mb-2" *ngIf="data?.languages" >
+                                    <div  class="custom-content-wrap">
+                                    <h4 class="pb-2">language </h4>
+                                    <div class="language"  *ngFor="let lang of data?.languages">
+                                        <span>{{lang.language_name}}  </span>               
+                                        <div class="lang" *ngIf="lang.level=='Novice'"><span></span></div>
+                                        <div class="lang" *ngIf="lang.level=='Intermediate'"><span></span><span></span></div>
+                                        <div class="lang" *ngIf="lang.level=='Advance/Low'"><span></span><span></span><span></span></div>
+                                        <div class="lang" *ngIf="lang.level=='Advance/Mid'"><span></span><span></span><span></span><span></span></div>
+                                        <div class="lang" *ngIf="lang.level=='Advance/High'"><span></span><span></span><span></span><span></span><span></span></div>
+                                        <div class="lang" *ngIf="lang.level=='Superior/Native'"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                                         </div>
+                               </div>        
+                                </div>
+
+                                <div class="col-lg-12 pl-md-0 skill-line mb-2"  *ngIf="data?.driving_licences">
+                                    <div class="custom-content-wrap">
+                                        <h4 class="pb-2">Driving licence </h4>
+                                    <p>{{data?.driving_licences?.driving_licence_category}}</p>
+                                        </div>
+                                </div>
+                                <div class="col-lg-12 pl-md-0 skill-line mb-2" *ngIf="data?.references">
+                                    <h4 class="pb-2">Reference </h4> 
+                                    <div  class="custom-content-wrap" *ngFor="let ref of data?.references">
+                         
+                                        <p>{{ref.referent_name}}</p>
+                                        <p>{{ref.phone}}</p>
+                                        <p>{{ref.email}}</p>
+                                        <p>{{ref.company}}</p> 
+                                       </div>
+                                </div>
+                                <div class="col-lg-12 pl-md-0 skill-line mb-2" *ngIf="data?.hobbies">
+                                    <h4 class="pb-2">Hobbies </h4>
+                                    <div *ngFor="let hobbie of data?.hobbies">
+                                        <p><span>{{hobbie.hobbies}}</span></p>
+                                    </div>
+                               
+        
+                                </div>
+                                <div class="col-lg-12 pl-md-0 skill-line mb-2" *ngIf="data?.personal_details">
+                                    <h4 class="pb-2">Personal Detail </h4>
+                                    <div  class="custom-content-wrap" >
+                                    <p *ngIf="data?.personal_details?.nationality"><b>Nationality:</b>&nbsp; {{data?.personal_details?.nationality}} </p>
+                                    <p *ngIf="data?.personal_details?.dob" class="float-r"><b>Date Of Birth:</b>&nbsp; {{data?.personal_details?.dob | date:'MMM yyyy'}}</p>
+                                    <p *ngIf="data?.personal_details?.visa_status"><b>Visa Status:</b>&nbsp; {{data?.personal_details?.visa_status}}</p>
+                                    <p *ngIf="data?.personal_details?.marital_status"><b>Marital Status:</b>&nbsp; {{data?.personal_details?.marital_status}}</p>
+                                </div>
+                                </div>
+                                <div class="col-lg-12 pl-md-0 skill-line mb-2" *ngIf="data?.publications">
+                                    <h4 class="pb-2">Publication </h4> 
+                                    <div  class="custom-content-wrap"  *ngFor="let pub of data?.publications" >
+                                    
+                                        <p>{{pub.article_title}}</p>
+                                        <p>{{pub.publication_title}}</p>
+                                        <p>{{pub.publication_date | date:'MMM yyyy'}}</p> 
+                                
+                               </div>
+                            </div>
+                        </div>
+
+                        </aside> 
+
+                        <section class="col-8 workExp py-2" > 
+                                <div class="custom-content col-lg-12">
+                                    <div class="custom-content-wrap">
+                                    <h1>{{data?.heading.first_name}} {{data?.heading.last_name}} </h1> 
+                                    <span class="title_bar mb-1 d-inline-block" *ngIf="data?.heading?.job_title">{{data?.heading?.job_title}}</span>                             
+                                    
+                                    <div class="address_bar" *ngIf="data?.heading">
+                                        <ul class="mt-2">
+                                            <li *ngIf="data?.heading.email">
+                                                <a><i class="far fa-envelope" ></i>
+                                                    {{ data?.heading.email }}</a>
+                                            </li>
+                                            <li *ngIf="data?.heading.phone">
+                                                <a><i class="fas fa-phone" ></i>
+                                                    {{ data?.heading.phone }}</a>
+                                            </li>
+                                            <li *ngIf="data?.heading.address">
+                                                <a><i class="fas fa-map" ></i>
+                                                    {{ data?.heading.address }},
+                                                    {{ data?.heading.city }}</a>
+                                            </li>
+                                            <li *ngIf="data?.heading.country">
+                                                <a><i class="fas fa-globe" ></i>
+                                                    {{  data?.heading.country
+                                                    }}</a>
+                                            </li>
+                                            <li *ngIf="data?.heading.postal_code">
+                                                <a><i class="fas fa-user" ></i>
+                                                    {{ data?.heading.postal_code }}</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div> 
+                                <div class="custom-content col-lg-12 mt-2" >
+                                    <div class="custom-content mt-2 pb-1" *ngIf="data?.summary">
+                                        <h4 class="pb-2">Summary</h4>
+        
+                                        <div class="custom-content-wrap"> 
+                                            <ul>
+                                                <li  [innerHTML]="data?.summary?.summary | sanitizeHtml"></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="custom-content pb-1" *ngIf="data?.experience">
+                                        <h4 class="pb-2">Work Experience:</h4>
+        
+                                        <div class="custom-content-wrap pb-2" *ngFor="let exp of data?.experience"> 
+                                          
+                                            <h6>
+                                                {{exp.job_title}} at {{exp.employeer}}
+                                            </h6>
+                                            <p class="mb-0">{{exp.start_date | date:'MMM yyyy'}} -
+                                                {{(exp.currently_working_here == false)? (exp.end_date | date:'MMM
+                                                yyyy'):'Present'}} <span class="float-r">{{exp.city}}</span> </p>
+        
+                                                <ul>
+                                                    <li  [innerHTML]="exp.experience_description | sanitizeHtml"></li>
+                                                </ul>
+                                           
+                                        </div>
+                                    </div>
+                
+                                    <div class="custom-content mt-2 pb-1" *ngIf="data.education">
+                                        <h4 class="pb-2">Education:
+                                        </h4>
+                                        <div class="custom-content-wrap pb-2" *ngFor="let edu of data.education">
+                                            <h6 class="mt-2">{{(edu.degree
+                                                == '0')?edu.own_degree:edu.degree}}</h6>
+                                            <p class="mt-0 mb-0"><span class="mb-0"
+                                                    class="subDetails">{{edu.school}}</span><span>,&nbsp;</span>
+                                                <span>{{edu.city}},</span> &nbsp; <span class="float-r">{{edu.graduation_date}}</span>
+                                            </p>
+                                            <!-- <p class="mt-0 mb-0" [innerHTML]="edu.education_description | sanitizeHtml"></p> -->
+                                            <ul>
+                                                <li  [innerHTML]="edu.education_description | sanitizeHtml"></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                
+                                    <div class="custom-content mt-2 pb-1" *ngIf="data.internships">
+                                        <h4 class="pb-2">Internship
+                                        </h4>
+                                        <div class="custom-content-wrap pb-2" *ngFor="let intern of data.internships">
+                                           
+                                            <h6>
+                                                {{intern.job_title}} at {{intern.employeer}}
+                                            </h6>
+                                            <p class="mb-0">{{intern.start_date | date:'MMM yyyy'}} -
+                                                {{(intern.currently_working_here == false)? (intern.end_date | date:'MMM
+                                                yyyy'):'Present'}} <span class="float-r" [innerHTML]="intern.city"></span> </p>
+                                                <ul>
+                                                    <li  [innerHTML]="intern.experience_description | sanitizeHtml"></li>
+                                                </ul> 
+                                        </div>
+                                    </div>
+                
+                                    <div class="custom-content mt-2 pb-1" *ngIf="data.custom_blocks">
+                                        <h4 class="pb-2" *ngFor="let cus of data?.custom_blocks?.custom_header">
+                                            {{cus.custom_header_title}}</h4>
+                                        <div class="custom-content-wrap pb-2" *ngFor="let custs of data?.custom_blocks?.custom_header">
+                                            <div *ngFor="let cust of custs?.custom_header_details">
+                                                <ul>
+                                                    <li [innerHTML]="cust.description | sanitizeHtml"></li>
+                                                </ul>  
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="custom-content mt-2 pb-1" *ngIf="data.courses">
+                                        <h4 class="pb-2">Courses:
+                                        </h4>
+                                        <div class="custom-content-wrap pb-2"  *ngFor="let course of data.courses">
+                                         
+                                            <h6>
+                                                {{course.course_name}} at {{course.institute_name}}
+                                            </h6>
+                                            <p>{{course.start_on | date:'MMM yyyy'}} To
+                                                {{course.end_on | date:'MMM yyyy'}} <span class="float-r"
+                                                    [innerHTML]="course.city"></span> </p>
+                
+                                        </div>
+                                    </div>
+                                    <div class="custom-content mt-2 pb-1" *ngIf="data?.extra_activities">
+                                        <h4 class="pb-2">Extra Activity:</h4>
+                                        <div class="custom-content-wrap pb-2" *ngFor="let ext of data?.extra_activities">
+                
+                                            <h6>
+                                                {{ext.function_title}}
+                                            </h6>
+                                            <p class="mb-0">{{ext.start_date | date:'MMM yyyy'}} -
+                                                {{(ext.currently_working_here == false)? (ext.end_date | date:'MMM
+                                                yyyy'):'Present'}} <span class="float-r" [innerHTML]="ext.employeer"></span> </p>
+         
+                                            <ul>
+                                                <li [innerHTML]="ext.experience_description | sanitizeHtml"></li>
+                                            </ul> 
+                                        </div>
+                                    </div>
+                                </div> 
+                        </section>
+                        <!-- end section -->
+                    </div>
+                </div>
+            </div>
+        </div>  
+    <!-- </div>
+</div> -->
